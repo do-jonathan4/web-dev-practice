@@ -3,3 +3,6 @@ body::before {
     content: "";
     height: 55px;
 }
+section {
+    height: 100vh;
+}
