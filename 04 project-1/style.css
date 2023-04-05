@@ -4,5 +4,8 @@ body::before {
     height: 55px;
 }
 section {
-    height: 100vh;
+    min-height: 50vh;
+}
+#tech i {
+    font-size: 2em;
 }
