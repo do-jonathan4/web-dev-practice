@@ -3,7 +3,7 @@ body::before {
     content: "";
     height: 55px;
 }
-section {
+#about, #tech, #projects {
     min-height: 50vh;
 }
 #tech i {
