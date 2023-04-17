@@ -1,0 +1,11 @@
+body::before {
+    display: block;
+    content: "";
+    height: 55px;
+}
+#about, #tech, #projects {
+    min-height: 50vh;
+}
+#tech i {
+    font-size: 2em;
+}
