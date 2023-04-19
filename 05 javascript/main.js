@@ -58,8 +58,129 @@ fruits.unshift('mangos');
 // Remove last value
 fruits.pop();
 
-// // Check if array
-console.log(Array.isArray(fruits));
+// OBJECT LITERALS
+const person = {
+    firstName: 'John',
+    age: 30,
+    hobbies: ['music', 'movies', 'sports'],
+    address: {
+      street: '50 Main st',
+      city: 'Boston',
+      state: 'MA'
+    }
+  }
+  
+  // Get single value
+  console.log(person.name)
+  
+  // Get array value
+  console.log(person.hobbies[1]);
+  
+  // Get embedded object
+  console.log(person.address.city);
+  
+  // Add property
+  person.email = 'jdoe@gmail.com';
+  
+  // Array of objects
+  const todos = [
+    {
+      id: 1,
+      text: 'Take out trash',
+      isComplete: false
+    },
+    {
+      id: 2,
+      text: 'Dinner with wife',
+      isComplete: false
+    },
+    {
+      id: 3,
+      text: 'Meeting with boss',
+      isComplete: true
+    }
+  ];
+  
+  // Get specific object value
+  console.log(todos[1].text);
+  
+  // Format as JSON
+  console.log(JSON.stringify(todos));
+  
+  
+  // LOOPS
+  
+  // For
+  for(let i = 0; i <= 10; i++){
+    console.log(`For Loop Number: ${i}`);
+  }
+  
+  // While
+  let i = 0
+  while(i <= 10) {
+    console.log(`While Loop Number: ${i}`);
+    i++;
+  }
+  
+  // Loop Through Arrays
+  // For Loop
+  for(let i = 0; i < todos.length; i++){
+    console.log(` Todo ${i + 1}: ${todos[i].text}`);
+  }
+  
+  // For...of Loop
+  for(let todo of todos) {
+    console.log(todo.text);
+  }
+  
+  
+  // HIGH ORDER ARRAY METHODS (show prototype)
+  
+  // forEach() - Loops through array
+  todos.forEach(function(todo, i, myTodos) {
+    console.log(`${i + 1}: ${todo.text}`);
+    console.log(myTodos);
+  });
+  
+  // map() - Loop through and create new array
+  const todoTextArray = todos.map(function(todo) {
+    return todo.text;
+  });
+  
+  console.log(todoTextArray);
+  
+  // filter() - Returns array based on condition
+  const todo1 = todos.filter(function(todo) {
+    // Return only todos where id is 1
+    return todo.id === 1; 
+  });
+  
+  
+  // CONDITIONALS
+  
+  // Simple If/Else Statement
+  const num = 30;
+  
+  if(num === 10) {
+    console.log('x is 10');
+  } else if(num > 10) {
+    console.log('x is greater than 10');
+  } else {
+    console.log('x is less than 10')
+  }
+  
+  // Switch
+  color = 'blue';
+  
+  switch(color) {
+    case 'red':
+      console.log('color is red');
+    case 'blue':
+      console.log('color is blue');
+    default:  
+      console.log('color is not red or blue')
+  }
+  
+  // Ternary operator / Shorthand if
+  const color = color === 'red' ? 10 : 20;
 
-// // Get index
-console.log(fruits.indexOf('oranges'));
