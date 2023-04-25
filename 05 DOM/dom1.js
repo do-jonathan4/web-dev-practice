@@ -1,14 +1,12 @@
 // console.log(document.domain);
 // console.log(document.url);
 // console.log(document.title);
-// // document.title = 123
-
+// document.title = 123
 // console.log(document.doctype);
 // console.log(document.head);
 // console.log(document.body);
 // console.log(document.all);
-// // document.all[10].textContent = 'HELLO'
-
+// document.all[10].textContent = 'HELLO'
 // console.log(document.forms);
 // console.log(document.links);
 // console.log(document.images);
@@ -70,12 +68,12 @@
 // secondItem.style.color = 'coral'
 
 // query selector all
-const titles = document.querySelectorAll('.title')
+// const titles = document.querySelectorAll('.title')
 
-console.log(titles);
-titles[0].textContent = 'HELLO'
+// console.log(titles);
+// titles[0].textContent = 'HELLO'
 
-const odd = document.querySelectorAll('li:nth-child(odd)')
-Object.values(odd).forEach(element => {
-    element.style.backgroundColor = '#f4f4f4'
-});
+// const odd = document.querySelectorAll('li:nth-child(odd)')
+// Object.values(odd).forEach(element => {
+//     element.style.backgroundColor = '#f4f4f4'
+// });
