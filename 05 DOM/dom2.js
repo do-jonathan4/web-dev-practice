@@ -43,17 +43,17 @@ const itemList = document.querySelector('#items')
 
 // create a div
 
-const newDiv = document.createElement('div')
-newDiv.className = 'hello'
-newDiv.id = 'hello1'
-newDiv.setAttribute('title', 'hello div')
+// const newDiv = document.createElement('div')
+// newDiv.className = 'hello'
+// newDiv.id = 'hello1'
+// newDiv.setAttribute('title', 'hello div')
 
-// create text note
+// // create text note
 
-const newDivText = document.createTextNode('Hello World')
-newDiv.appendChild(newDivText)
+// const newDivText = document.createTextNode('Hello World')
+// newDiv.appendChild(newDivText)
 
-const container = document.querySelector('header .container')
-const h1 = document.querySelector('header .h1')
+// const container = document.querySelector('header .container')
+// const h1 = document.querySelector('header .h1')
 
-container.insertBefore(newDiv, h1)
+// container.insertBefore(newDiv, h1)
