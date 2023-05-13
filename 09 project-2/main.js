@@ -36,8 +36,14 @@ const navbar = document.querySelector('nav')
 
 window.addEventListener('scroll', function () {
   if (window.pageYOffset > 0) {
-    navbar.classList.add("navbar-after-scroll")
+    navbar.classList.add("navbar-dark")
+    navbar.classList.add("bg-dark")
+    navbar.classList.remove("navbar-light")
+    navbar.classList.remove("bg-light")
   } else {
-    navbar.classList.remove("navbar-after-scroll")
+    navbar.classList.add("navbar-light")
+    navbar.classList.add("bg-light")
+    navbar.classList.remove("navbar-dark")
+    navbar.classList.remove("bg-dark")
   }
 })

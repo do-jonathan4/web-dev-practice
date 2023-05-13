@@ -10,49 +10,17 @@ body::before {
     font-size: 2em;
 }
 
-.navbar-before-scroll .nav-link,
-.navbar-before-scroll .navbar-brand {
-    color: #343a40;
+.navbar-light {
     font-size: 1.2em;
     font-weight: 500;
-}
-.navbar-before-scroll {
-    background-color: #f8f9fa;
+    transition: font-size .5s;
 }
 
-.navbar-after-scroll .nav-link,
-.navbar-after-scroll .navbar-brand {
-    color: #fff;
+.navbar-dark {
     font-size: 1.1em;
     font-weight: normal;
-    transition-property: font-size;
-    transition-duration: .4s;
-}
-.navbar-after-scroll {
-    background-color: #343a40;
+    transition: font-size .5s;
 }
 
-.navbar-after-scroll {
-    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-}
-.navbar-before-scroll {
-    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-}
 
-/* An optional height of the navbar AFTER scroll */
-.navbar.navbar-before-scroll.navbar-after-scroll {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    }
 
-/* Navbar on mobile */
-@media (max-width: 991.98px) {
-    nav {
-        background-color: #f8f9fa;
-    }
-
-    .nav-link,
-    .navbar-toggler-icon {
-        color: #343a40 !important;
-    }
-}
