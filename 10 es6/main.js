@@ -1,37 +1,34 @@
-//Template Literals
+//Generic Data
 const firstName = 'John'
 const lastName = 'Smith'
 
-console.log(`Hello ${firstName} ${lastName}`);
-
-//Destructuring 
-const [fruit1, fruit2] = ['apple', 'orange']
-
-console.log(fruit1);
-
-//Object Literal
-const {city, state} = {
+const address = {
     city: 'Austin',
     state: 'Texas'
 }
 
+const fruits = ['apple', 'orange']
+const num = [4, 5, 6]
+
+//Template Literals
+console.log(`Hello ${firstName} ${lastName}`);
+
+//Destructuring 
+const [fruit1, fruit2] = fruits
+console.log(fruit1);
+
+//Object Literal
+const {city, state} = address
 console.log(city);
 
 //For of loop
-const incomes = [10000, 20000, 30000]
-
-for (let i of incomes) {
+for (let i of num) {
     console.log(`${i} is too high`);
 }
 
 //Spread operator
-const num = [4, 5, 6]
 console.log(1, 2, 3, ...num, 7, 8);
-
-const food = {x: 'pizza'}
-const game = {y: 'pokemon'}
-const favStuff = {...food, ...game}
-console.log(favStuff);
+console.log({...address, zip: 55555});
 
 //Rest operator
 function sum(...nums) {
@@ -39,13 +36,11 @@ function sum(...nums) {
     for (const x of nums) total += x
     return total
 }
-
-console.log(sum(1, 2, 3));
-console.log(sum(1, 2, 3, 4, 5, 6));
+console.log(sum(1, 2, 3, ...num));
 
 //Arrow Functions
 const add = (nums) => nums.reduce((x, y) => x + y)
-console.log(add(incomes));
+console.log(add(num));
 
 //Default Params
 const fullName = (first = 'Jim', last) => {
