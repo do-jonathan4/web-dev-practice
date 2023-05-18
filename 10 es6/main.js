@@ -39,8 +39,10 @@ function sum(...nums) {
 console.log(sum(1, 2, 3, ...num));
 
 //Arrow Functions
-const add = (nums) => nums.reduce((x, y) => x + y)
-console.log(add(num));
+const hello = () => {
+    return "Hello World";
+}
+console.log(hello());
 
 //Default Params
 const fullName = (first = 'Jim', last) => {
@@ -51,3 +53,46 @@ console.log(fullName(undefined, lastName));
 //Array.includes() 
 console.log(num.includes(5));
 console.log(num.includes(40));
+
+//Let & const
+const person = {}
+person.firstName = 'John'
+
+console.log(person);
+
+//Export & import
+import { data } from './export.js'
+console.log(data);
+
+//Classes 
+class Animal {
+    constructor (type, legs) {
+        this.type = type
+        this.legs = legs
+        this.sound = 'Meow'
+    }
+    makeNoise() {
+        console.log(this.sound);
+    }
+    description() {
+        console.log(`My ${this.type} has ${this.legs} legs.`);
+    }
+    getData() {
+        console.log(this);
+    }
+}
+const cat = new Animal('dog', 2)
+cat.makeNoise()
+cat.description()
+cat.getData()
+
+//Async/Await
+const apiUrl = 'https://jsonplaceholder.typicode.com/users'
+
+function getUsers(url) {
+    fetch(url)
+    .then(res => res.json())
+    .then(json => console.log(json[0]))
+    .catch(err => console.log('failed request'))
+}
+getUsers(apiUrl)
