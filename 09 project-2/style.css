@@ -1,0 +1,45 @@
+body::before {
+    display: block;
+    content: "";
+    height: 55px;
+}
+#about, #tech, #projects {
+    min-height: 50vh;
+}
+#tech i {
+    font-size: 2em;
+}
+
+.navbar-light {
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: font-size .5s;
+}
+
+.navbar-dark {
+    font-size: 1.1em;
+    font-weight: normal;
+    transition: font-size .5s;
+}
+
+#contact a {
+    position: relative;
+    display: inline-block;
+}
+#contact a .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: darkslategrey;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+#contact a:hover .tooltiptext {
+visibility: visible;
+}
