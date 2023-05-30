@@ -1,21 +1,54 @@
 // GET REQUEST
 function getTodos() {
-    console.log('GET Request');
+    // axios({
+    //   method: 'get',
+    //   url: 'https://jsonplaceholder.typicode.com/todos',
+    //   params: {
+    //     _limit: 5
+    //   }
+    // })
+    //   .then(res => showOutput(res))
+    //   .catch(err => console.log(err))
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+      .then(res => showOutput(res))
+      .catch(err => console.log(err))
   }
   
   // POST REQUEST
   function addTodo() {
-    console.log('POST Request');
+    // axios({
+    //   method: 'post',
+    //   url: 'https://jsonplaceholder.typicode.com/todos',
+    //   data: {
+    //     title: 'New stuff',
+    //     completed: false
+    //   }
+    // })
+    //   .then(res => showOutput(res))
+    //   .catch(err => console.log(err))
+    axios.post('https://jsonplaceholder.typicode.com/todos', {
+      title: 'New stuff',
+      completed: false
+    })
+      .then(res => showOutput(res))
+      .catch(err => console.log(err))
   }
   
   // PUT/PATCH REQUEST
   function updateTodo() {
-    console.log('PUT/PATCH Request');
+    axios.put('https://jsonplaceholder.typicode.com/todos/1', {
+      title: 'Updated stuff',
+      completed: true
+    })
+      .then(res => showOutput(res))
+      .catch(err => console.log(err))
   }
   
   // DELETE REQUEST
   function removeTodo() {
-    console.log('DELETE Request');
+    axios.delete('https://jsonplaceholder.typicode.com/todos/1')
+      .then(res => showOutput(res))
+      .catch(err => console.log(err))
   }
   
   // SIMULTANEOUS DATA
