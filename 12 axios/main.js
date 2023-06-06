@@ -12,7 +12,7 @@ function getTodos() {
     // })
     //   .then(res => showOutput(res))
     //   .catch(err => console.log(err))
-    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5', {timeout: 5000})
       .then(res => showOutput(res))
       .catch(err => console.log(err))
   }
@@ -99,7 +99,11 @@ function getTodos() {
   
   // ERROR HANDLING
   function errorHandling() {
-    axios.get('https://jsonplaceholder.typicode.com/todoss')
+    axios.get('https://jsonplaceholder.typicode.com/todoss', {
+      validateStatus: function(status) {
+        return status < 500
+      }
+    })
       .then(res => showOutput(res))
       .catch(err => {
         if(err.response) {
@@ -141,7 +145,12 @@ function getTodos() {
     return Promise.reject(error)
   })
   // AXIOS INSTANCES
-  
+  const axioInstance = axios.create({
+    baseURL: 'https://jsonplaceholder.typicode.com'
+  })
+  // axioInstance.get('/comments?_limit=5')
+  //   .then(res => showOutput(res))
+
   // Show output in browser
   function showOutput(res) {
     document.getElementById('res').innerHTML = `
