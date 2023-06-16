@@ -31,9 +31,32 @@ const server = http.createServer((req, res) => {
     //     res.writeHead(200, {'Content-Type': 'application/json'})
     //     res.end(JSON.stringify(users))
     // }
-    let filePath = path.join(__dirname, 'public', req.url === '/' ? 'index.html' : req.url)
-    console.log(filePath);
-    res.end()
+    let filePath = path.join(
+        __dirname, 
+        'public', 
+        req.url === '/' ? 'index.html' : req.url
+    )
+    let extname = path.extname(filePath)
+    let contentType = 'text/html'
+
+    switch(extname) {
+        case '.js':
+            contentType = 'text/javascript'
+            break
+        case '.css':
+            contentType = 'text/css'
+            break
+        case '.json':
+            contentType = 'application/json'
+            break
+        case '.png':
+            contentType = 'image/png'
+            break
+        case '.jpg':
+            contentType = 'image/jpg'
+            break
+
+    }
 })
 
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}`))
