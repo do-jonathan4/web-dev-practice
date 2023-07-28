@@ -1,14 +1,12 @@
-const express = require('express')
 const asyncHandler = require('express-async-handler')
-const Model = require('../config/schema')
-const router = express.Router()
+const Model = require('../model/schema')
 
-router.get('/', asyncHandler(async (req, res) => {
+const getItems = asyncHandler(async (req, res) => {
     const list = await Model.find()
     res.status(200).json(list)
-}))
+})
 
-router.post('/', asyncHandler(async (req, res) => {
+const postItems = asyncHandler(async (req, res) => {
     if (!req.body.text) {
         res.status(400)
         throw new Error ('Please include text')
@@ -16,9 +14,9 @@ router.post('/', asyncHandler(async (req, res) => {
 
     await Model.create({item: req.body.text})
     res.status(200).json({message: `Created item: ${req.body.text}`})
-}))
+})
 
-router.put('/:id', asyncHandler(async (req, res) => {
+const putItems = asyncHandler(async (req, res) => {
     const id = await Model.findById(req.params.id)
 
     if (!id) {
@@ -32,9 +30,9 @@ router.put('/:id', asyncHandler(async (req, res) => {
 
     await Model.findByIdAndUpdate(id, {item: req.body.text})
     res.status(200).json({message: `Updated item to: ${req.body.text}`})
-}))
+})
 
-router.delete('/:id', asyncHandler(async (req, res) => {
+const deleteItems = asyncHandler(async (req, res) => {
     const id = await Model.findById(req.params.id)
 
     if (!id) {
@@ -44,6 +42,11 @@ router.delete('/:id', asyncHandler(async (req, res) => {
 
     await Model.findByIdAndDelete(id)
     res.status(200).json({message: 'Deleted item successfully'})
-}))
+})
 
-module.exports = router
+module.exports = {
+    getItems,
+    postItems,
+    putItems,
+    deleteItems
+}

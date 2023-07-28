@@ -1,9 +1,9 @@
 const express = require('express')
 const dotenv = require('dotenv').config()
 const colors = require('colors')
-const router = require('./utils/routes/router')
-const errorHandler = require('./utils/error/errorHandler')
-const connectDB = require('./utils/config/db')
+const router = require('./routes/router')
+const errorHandler = require('./error/errorHandler')
+const connectDB = require('./config/db')
 const PORT = 5000 || process.env.PORT
 
 const app = express()
