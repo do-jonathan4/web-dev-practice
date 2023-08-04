@@ -23,3 +23,17 @@ Deploy it by running.
 ```
 firebase deploy
 ```
+
+### Setting up redirects
+In `firebase.json`
+```
+...
+    "redirects": [
+      {
+        "source": "/contact",
+        "destination": "/",
+        "type": 302
+      }
+    ],
+```
+In this repo, `contact.html` does not exist, so it redirects to the home page.
