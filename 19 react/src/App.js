@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
-  const url = "http://localhost:5000/tasks";
+  const url = "http://localhost:5000/tasks/";
   const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([]);
 
@@ -20,12 +20,7 @@ const App = () => {
   }, []);
 
   // Fetch Tasks
-  const fetchTasks = async () => {
-    const res = await fetch(url);
-    const data = await res.json();
-    return data;
-  };
-  const fetchTask = async (id) => {
+  const fetchTasks = async (id = "") => {
     const res = await fetch(url + id);
     const data = await res.json();
     return data;
@@ -57,7 +52,7 @@ const App = () => {
 
   //Toggle Reminder
   const toggleReminder = async (id) => {
-    const taskToToggle = await fetchTask(id);
+    const taskToToggle = await fetchTasks(id);
     const updateTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
 
     const res = await fetch(url + id, {
