@@ -95,8 +95,8 @@ const App = () => {
               <Footer />
             </div>
           }
-        ></Route>
-        <Route path="about" element={<About />}></Route>
+        />
+        <Route path="about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );
