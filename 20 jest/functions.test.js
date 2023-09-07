@@ -1,5 +1,29 @@
 const functions = require("./functions");
 
+// beforeEach(() => initDataBase());
+// afterEach(() => closeDataBase());
+
+// beforeAll(() => initDataBase());
+// afterAll(() => closeDataBase());
+
+// const initDataBase = () => console.log("Database Initialized...");
+// const closeDataBase = () => console.log("Database Closed...");
+
+const nameCheck = () => console.log("Checking Name...");
+
+describe("Checking Names", () => {
+  beforeEach(() => nameCheck());
+
+  test("User is John", () => {
+    const name = "John";
+    expect(name).toBe("John");
+  });
+  test("User is Joe", () => {
+    const name = "Joe";
+    expect(name).toBe("Joe");
+  });
+});
+
 test("Adds 2 + 2 to equal 4", () => {
   expect(functions.add(2, 2)).toBe(4);
 });
