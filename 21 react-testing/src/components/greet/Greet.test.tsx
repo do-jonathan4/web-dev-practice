@@ -1,16 +1,19 @@
-import { render, screen } from '@testing-library/react'
-import { Greet } from './Greet'
+import { render, screen } from "@testing-library/react";
+import { Greet } from "./greet";
 
-describe('Greet', () => {
-  test('renders correctly', () => {
-    render(<Greet />)
-    const textElement = screen.getByText('Hello Guest')
-    expect(textElement).toBeInTheDocument()
-  })
+/**
+ * Greet should render text hello and if a name is passed into the component
+ * It should render hello followed by the name
+ */
 
-  test('renders a name', () => {
-    render(<Greet name="Vishwas" />)
-    const textElement = screen.getByText('Hello Vishwas')
-    expect(textElement).toBeInTheDocument()
-  })
-})
+test("Greet renders correctly", () => {
+  render(<Greet />);
+  const text = screen.getByText(/hEllO/i);
+  expect(text).toBeInTheDocument();
+});
+
+test("Greet renders with a name", () => {
+  render(<Greet name="Joe" />);
+  const text = screen.getByText(/hEllO Joe/i);
+  expect(text).toBeInTheDocument();
+});
