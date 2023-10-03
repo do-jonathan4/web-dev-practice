@@ -14,11 +14,30 @@ describe("Application", () => {
     const paragraphElement = screen.getByText("All fields are mandatory");
     expect(paragraphElement).toBeInTheDocument();
 
+    /*string */
+    const paragraphElement1 = screen.getByText("are mandatory", {
+      exact: false,
+    });
+    expect(paragraphElement1).toBeInTheDocument();
+
+    /*regez */
+    const paragraphElement2 = screen.getByText(/mandatory/i);
+    expect(paragraphElement2).toBeInTheDocument();
+
+    /*function */
+    const paragraphElement3 = screen.getByText((x) =>
+      x.startsWith("All fields")
+    );
+    expect(paragraphElement3).toBeInTheDocument();
+
     const imageElement = screen.getByAltText("a person with a laptop");
     expect(imageElement).toBeInTheDocument();
 
     const closeElement = screen.getByTitle("close");
     expect(closeElement).toBeInTheDocument();
+
+    const customElement = screen.getByTestId("custom-element");
+    expect(customElement).toBeInTheDocument();
 
     const nameElement = screen.getByRole("textbox", { name: "Name" });
     expect(nameElement).toBeInTheDocument();
