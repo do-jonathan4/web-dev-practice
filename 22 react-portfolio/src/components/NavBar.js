@@ -4,12 +4,12 @@ import "./NavBar.css";
 
 function NavBar() {
   return (
-    <Navbar expand="lg" className="navbar-light bg-light">
+    <Navbar expand="lg" className="fixed-top navbar-light bg-light">
       <Container>
         <Navbar.Brand href="() => false">JD</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse className="text-center" id="basic-navbar-nav">
-          <Nav className="me-auto">
+        <Navbar.Toggle />
+        <Navbar.Collapse className="text-center justify-content-end">
+          <Nav>
             <Nav.Item>
               <Nav.Link href="#about">About</Nav.Link>
             </Nav.Item>
