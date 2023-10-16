@@ -12,7 +12,7 @@ function AppCard(props) {
       <Card.Body>
         <Card.Title>{props.data.title}</Card.Title>
         <Card.Text
-          className="overflow-auto d-none d-md-flex"
+          className="overflow-auto d-none d-md-flex text-start"
           style={{ height: "6rem" }}
         >
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere iure

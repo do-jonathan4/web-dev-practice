@@ -15,7 +15,7 @@ function About() {
               alt="User Portrait"
             />
           </Col>
-          <Col className="p-4" md={6}>
+          <Col className="p-4 text-start" md={6}>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
               rem nam alias quo labore aliquam aut cum. Eaque, soluta. In!

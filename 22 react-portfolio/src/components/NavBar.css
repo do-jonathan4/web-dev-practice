@@ -1,11 +1,11 @@
 .navbar-light {
   font-size: 1.2em;
   font-weight: 500;
-  transition: font-size 0.5s;
+  transition: font-size 1s;
 }
 
 .navbar-dark {
   font-size: 1.1em;
   font-weight: normal;
-  transition: font-size 0.5s;
+  transition: font-size 1s;
 }

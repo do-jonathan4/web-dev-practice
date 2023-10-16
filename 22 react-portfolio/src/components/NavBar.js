@@ -2,11 +2,15 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./NavBar.css";
 
-function NavBar() {
+function NavBar({ userScrolled }) {
+  const top = Boolean(userScrolled)
+    ? "navbar-dark bg-dark"
+    : "navbar-light bg-light";
+
   return (
-    <Navbar expand="lg" className="fixed-top navbar-light bg-light">
+    <Navbar expand="lg" className={`fixed-top ${top}`}>
       <Container>
-        <Navbar.Brand href="() => false">JD</Navbar.Brand>
+        <Navbar.Brand href="/">JD</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="text-center justify-content-end">
           <Nav>

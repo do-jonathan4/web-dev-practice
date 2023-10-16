@@ -15,7 +15,7 @@ import { faTerminal, faDatabase } from "@fortawesome/free-solid-svg-icons";
 function Tech() {
   return (
     <div id="tech" className="bg-secondary text-white p-5">
-      <Container className="p-4">
+      <Container className="p-4 text-center">
         <h2 className="text-center pt-3">Technologies</h2>
         <Container className="p-4 fs-5">
           <ul className="list-unstyled">
