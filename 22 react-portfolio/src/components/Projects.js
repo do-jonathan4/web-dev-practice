@@ -27,12 +27,12 @@ function Projects() {
   ];
 
   return (
-    <div id="projects" class="bg-light p-5">
-      <Container class="container p-4">
-        <h2 class="text-center pt-3">Projects</h2>
+    <div id="projects" className="bg-light p-5">
+      <Container className="container p-4">
+        <h2 className="text-center pt-3">Projects</h2>
         <div
           id="projectContainer"
-          class="p-4 d-flex flex-wrap align-items-center justify-content-around"
+          className="p-4 d-flex flex-wrap align-items-center justify-content-around"
         >
           {projectData.map((x) => (
             <AppCard key={x.id} data={x} />
