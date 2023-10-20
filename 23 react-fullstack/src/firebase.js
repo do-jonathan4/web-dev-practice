@@ -1,15 +1,18 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firebase-firestore";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyB8Lpg5qh_q6pBRkQYgbd-oQtir7xaNQG4",
-  authDomain: "cs-intro.firebaseapp.com",
-  projectId: "cs-intro",
-  storageBucket: "cs-intro.appspot.com",
-  messagingSenderId: "861649350294",
-  appId: "1:861649350294:web:a90a32f2acd8f729a09cb7",
-  measurementId: "G-RRGCELGE00",
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId,
+  measurementId: process.env.measurementId,
 };
 
 const app = initializeApp(firebaseConfig);
