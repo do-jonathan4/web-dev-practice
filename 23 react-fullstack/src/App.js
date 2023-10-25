@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState, useEffect } from "react";
 import Title from "./components/Title";
 import AddTodo from "./components/AddTodo";
 import Todo from "./components/Todo";
@@ -13,6 +14,26 @@ import {
 import { db } from "./firebase";
 
 function App() {
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    const q = query(collection(db, "todos"));
+    const unsub = onSnapshot(q, (querySnapshot) => {
+      let todosArray = [];
+      querySnapshot.forEach((doc) => {
+        todosArray.push({ ...doc.data(), id: doc.id });
+      });
+      setTodos(todosArray);
+    });
+    return () => unsub;
+  }, []);
+
+  const handleEdit = async (todo, title) => {
+    await updateDoc(doc(db, "todos", todo.id), { title });
+  };
+  const toggleComplete = async (todo, title) => {
+    await updateDoc(doc(db, "todos", todo.id), { completed: !todo.completed });
+  };
   return (
     <div className="App">
       <div>
