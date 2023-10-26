@@ -31,9 +31,13 @@ function App() {
   const handleEdit = async (todo, title) => {
     await updateDoc(doc(db, "todos", todo.id), { title });
   };
-  const toggleComplete = async (todo, title) => {
+  const toggleComplete = async (todo) => {
     await updateDoc(doc(db, "todos", todo.id), { completed: !todo.completed });
   };
+  const handleDelete = async (id) => {
+    await deleteDoc(doc(db, "todos", id));
+  };
+
   return (
     <div className="App">
       <div>
@@ -41,6 +45,17 @@ function App() {
       </div>
       <div>
         <AddTodo />
+      </div>
+      <div className="todo_container">
+        {todos.map((todo) => (
+          <Todo
+            key={todo.id}
+            todo={todo}
+            handleEdit={handleEdit}
+            toggleComplete={toggleComplete}
+            handleDelete={handleDelete}
+          />
+        ))}
       </div>
     </div>
   );
