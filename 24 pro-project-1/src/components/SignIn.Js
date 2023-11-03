@@ -1,7 +1,13 @@
 import React from "react";
+import { auth } from "../firebase";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const SignIn = () => {
-  return <div>SignIn</div>;
+  const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider);
+  };
+  return <button onClick={signInWithGoogle}>SignIn</button>;
 };
 
 export default SignIn;
