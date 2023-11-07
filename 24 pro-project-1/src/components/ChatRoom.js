@@ -1,7 +1,21 @@
-import React from "react";
+import { useRef } from "react";
+import SendMessage from "./SendMessage";
 
 const ChatRoom = () => {
-  return <div>ChatRoom</div>;
+  const scroll = useRef();
+
+  //message array
+  // query
+  // order by X
+
+  return (
+    <>
+      <main>
+        <span ref={scroll}></span>
+      </main>
+      <SendMessage scroll={scroll} />
+    </>
+  );
 };
 
 export default ChatRoom;
