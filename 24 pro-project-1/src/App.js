@@ -6,13 +6,14 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import { auth, firestore } from "./firebase";
 import ChatRoom from "./components/ChatRoom";
 import SignIn from "./components/SignIn";
+import SignOut from "./components/SignOut";
 
 function App() {
   const [user] = useAuthState(auth);
 
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">{!user && <SignOut />}</header>
       <section>{user ? <ChatRoom /> : <SignIn />}</section>
     </div>
   );
