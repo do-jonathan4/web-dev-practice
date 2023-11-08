@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import {
   query,
   collection,
@@ -33,13 +33,15 @@ const ChatRoom = () => {
 
     return () => unsubscribe;
   }, []);
-  //message array
-  // query
-  // order by X
 
   return (
     <>
       <main>
+        <div className="messages-wrapper">
+          {messages?.map((message) => (
+            <div key={message.id} message={message} div />
+          ))}
+        </div>
         <span ref={scroll}></span>
       </main>
       <SendMessage scroll={scroll} />
