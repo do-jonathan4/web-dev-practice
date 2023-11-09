@@ -7,7 +7,14 @@ const SignIn = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider);
   };
-  return <button onClick={signInWithGoogle}>SignIn</button>;
+
+  return (
+    <>
+      <h2>Welcome to Chat App</h2>
+      <p>Sign In with your Google Account to start chatting</p>
+      <button onClick={signInWithGoogle}>Sign In</button>
+    </>
+  );
 };
 
 export default SignIn;

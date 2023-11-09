@@ -1,9 +1,8 @@
 import "./App.css";
 
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useCollectionData } from "react-firebase-hooks/firestore";
 
-import { auth, firestore } from "./firebase";
+import { auth } from "./firebase";
 import ChatRoom from "./components/ChatRoom";
 import SignIn from "./components/SignIn";
 import SignOut from "./components/SignOut";
@@ -13,7 +12,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">{!user && <SignOut />}</header>
+      <header className="App-header">
+        {user ? <SignOut /> : <h2>Chat App</h2>}
+      </header>
       <section>{user ? <ChatRoom /> : <SignIn />}</section>
     </div>
   );
