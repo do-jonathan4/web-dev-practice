@@ -9,6 +9,7 @@ import {
 
 import { db } from "../firebase";
 import SendMessage from "./SendMessage";
+import Message from "./Message";
 
 const ChatRoom = () => {
   const scroll = useRef();
@@ -38,8 +39,8 @@ const ChatRoom = () => {
     <>
       <main>
         <div className="messages-wrapper">
-          {messages?.map((message) => (
-            <div key={message.id} message={message} div />
+          {messages.map((x) => (
+            <Message key={x.id} message={x} />
           ))}
         </div>
         <span ref={scroll}></span>
