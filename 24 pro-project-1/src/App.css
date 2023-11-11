@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+  background-color: gray;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  background-color: CadetBlue;
+  height: 5vh;
+}
+
+header div {
+  font-size: 2rem;
+}
+
+header .sign-out {
+  position: absolute;
+  right: 50px;
+}
+button {
+  background-color: midnightblue;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}

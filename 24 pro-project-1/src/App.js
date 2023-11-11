@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {user ? <SignOut /> : <h2>Chat App</h2>}
+        {user ? <SignOut /> : <div>Chat App</div>}
       </header>
       <section>{user ? <ChatRoom /> : <SignIn />}</section>
     </div>
