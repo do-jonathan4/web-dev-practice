@@ -9,11 +9,11 @@ const SignIn = () => {
   };
 
   return (
-    <>
+    <main className="sign-in">
       <h2>Welcome to Chat App</h2>
       <p>Sign In with your Google Account to start chatting</p>
       <button onClick={signInWithGoogle}>Sign In</button>
-    </>
+    </main>
   );
 };
 

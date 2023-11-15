@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .App {
-  min-height: 100vh;
   width: 100%;
-  background-color: gray;
+  background-color: #2e3440;
   font-family: "Roboto", sans-serif;
 }
 
@@ -11,8 +10,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 30px;
-  background-color: CadetBlue;
+  background-color: #a3be8c;
+  padding: 5px;
   height: 5vh;
 }
 
@@ -24,8 +23,9 @@ header .sign-out {
   position: absolute;
   right: 50px;
 }
+
 button {
-  background-color: midnightblue;
+  background-color: #5e81ac;
   border: none;
   color: white;
   padding: 15px 30px;
@@ -33,4 +33,62 @@ button {
   text-decoration: none;
   cursor: pointer;
   font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  height: 94vh;
+}
+
+.sign-in {
+  text-align: center;
+  color: #e5e9f0;
+  margin-top: 20%;
+}
+
+form {
+  height: 5vh;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+form button {
+  width: 20%;
+  border-radius: 0px;
+}
+
+input {
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1.5rem;
+  background: #3b4252;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+}
+
+.messages-wrapper {
+  padding: 30px;
+  margin-bottom: 60px;
+  overflow-y: scroll;
+  background-color: #d8dee9;
+  height: 90vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .sign-in {
+    margin-top: 40%;
+    padding: 50px;
+  }
 }
