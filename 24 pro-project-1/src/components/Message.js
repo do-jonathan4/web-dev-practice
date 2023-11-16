@@ -8,13 +8,8 @@ const Message = ({ message }) => {
 
   return (
     <div className={`chat-bubble ${isUser}`}>
-      <img
-        className="chat-bubble-left"
-        src={message.avatar}
-        alt="user avatar"
-      />
-      <div className="chat-bubble-right">
-        <p className="user-name">{message.name}</p>
+      <img src={message.avatar} alt="user avatar" />
+      <div>
         <p className="user-message">{message.text}</p>
       </div>
     </div>
