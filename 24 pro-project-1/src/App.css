@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
+body {
+  background-color: #2e3440;
+  height: 99vh;
+  box-sizing: border-box;
+}
 .App {
   width: 100%;
   background-color: #2e3440;
@@ -37,7 +41,6 @@ button {
 }
 
 button:disabled {
-  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -83,12 +86,14 @@ input {
   margin-bottom: 60px;
   overflow-y: scroll;
   background-color: #d8dee9;
-  height: 90vh;
+  height: 84vh;
+  max-height: 84vh;
 }
 
 .chat-bubble {
   display: flex;
   align-items: center;
+  margin: 5px 0px;
 }
 
 img {
@@ -105,15 +110,14 @@ img {
 .chat-bubble div {
   padding: 5px 25px;
   border-radius: 20px;
-  background-color: #fff;
 }
 
 .sent div {
-  background-color: #fff;
+  background-color: #81a1c1;
 }
 
 .recieved div {
-  background-color: #d8dee9;
+  background-color: #b48ead;
 }
 
 @media only screen and (max-width: 600px) {

@@ -42,8 +42,8 @@ const ChatRoom = () => {
           {messages.map((x) => (
             <Message key={x.id} message={x} />
           ))}
+          <div ref={scroll}></div>
         </div>
-        <span ref={scroll}></span>
       </main>
       <SendMessage scroll={scroll} />
     </>
